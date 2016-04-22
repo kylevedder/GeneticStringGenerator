@@ -7,7 +7,7 @@ public class Main {
 		String goal = "HELLO WORLD!";
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ! ";
 
-		StringMutator m = new StringMutator(input, goal, alphabet);
+		Mutator m = new StringMutator(input, goal, alphabet);
 		System.out.println(m.runGenetics());
 	}
 

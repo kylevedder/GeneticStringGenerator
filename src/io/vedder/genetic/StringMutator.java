@@ -2,7 +2,7 @@ package io.vedder.genetic;
 
 import java.util.Random;
 
-public class StringMutator {
+public class StringMutator implements Mutator {
 	private final String input;
 	private final String goal;
 	private final String alphabet;
