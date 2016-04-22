@@ -15,13 +15,12 @@ public class StringMutator implements Mutator {
 		r = new Random();
 	}
 
-	public String runGenetics() {
+	public String execute() {
 		String currentString = this.input;
 		int numSteps = 0;
 		while (!currentString.equals(goal)) {
-			String mutatedVersion = mutate(currentString);
-			if (Utils.levenshteinDistance(mutatedVersion, goal) <= Utils
-					.levenshteinDistance(currentString, goal)) {
+			String mutatedVersion = mutateString(currentString);
+			if (Utils.levenshteinDistance(mutatedVersion, goal) <= Utils.levenshteinDistance(currentString, goal)) {
 				currentString = mutatedVersion;
 				System.out.println(currentString);
 			}
@@ -31,7 +30,7 @@ public class StringMutator implements Mutator {
 		return currentString;
 	}
 
-	private String mutate(String input) {
+	private String mutateString(String input) {
 		int operation = r.nextInt(3);
 
 		char randChar = alphabet.charAt(r.nextInt(alphabet.length()));
@@ -44,7 +43,6 @@ public class StringMutator implements Mutator {
 		// randomization
 		switch (operation) {
 		case 0: // Insert random letter
-
 			return firstPart + randChar + secondPart;
 		case 1: // Append new letter
 			return input + randChar;

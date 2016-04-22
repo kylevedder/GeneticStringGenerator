@@ -8,7 +8,7 @@ public class Main {
 		String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ! ";
 
 		Mutator m = new StringMutator(input, goal, alphabet);
-		System.out.println(m.runGenetics());
+		System.out.println(m.execute());
 	}
 
 }
